@@ -1,6 +1,8 @@
 #include <stdint.h>
+#include <time.h>
+#include <stdio.h>
 #include "03_sort3.in"
-const int base = 16;
+#define base 16
 
 int getMaxNum(int n, int arr[]){
     int ret = 0;
@@ -85,39 +87,59 @@ void radixSort(int bitround, int a[], int l, int r){
 
 
 static int ans;
-void putint(int a)
-{
-  kprintf("%d",a);
-}
-void putch(int a)
-{
-  kprintf("%c",a);
-}
 
-void *memset(void *ptr, int value, uint64_t num) {
-    unsigned char *p = (unsigned char *)ptr;
-    while (num--) {
-        *p++ = (unsigned char)value;
+void compute_stats(unsigned long arr[], int size, unsigned long *max, double *avg, double *std_dev) {
+    unsigned long sum = 0;
+    *max = arr[0];  // Assume first element is max initially
+
+    // Compute max and sum
+    for (int i = 0; i < size; i++) {
+        if (arr[i] > *max) {
+            *max = arr[i];
+        }
+        sum += arr[i];
     }
-    return ptr;
+
+    // Compute average
+    *avg = (double)sum / size;
+
+    // Compute standard deviation
+    double variance_sum = 0.0;
+    for (int i = 0; i < size; i++) {
+        variance_sum += pow(arr[i] - *avg, 2);
+    }
+    *std_dev = sqrt(variance_sum / size);
 }
 
-int t03_sort3(){
+int main(){
     int n = 5000000;
+    struct timespec start, end;
+    long elapsed_ns;
+    unsigned long max;
+    double avg, std_dev;
+    unsigned long arr[10];
+    int j;
+    printf("start to sort\n");
+    for (j = 0; j < 10; j++) {
+      ans = 0;
+      clock_gettime(CLOCK_MONOTONIC, &start);
+      radixSort(8, a, 0, n);
 
-
-    radixSort(8, a, 0, n);
-
-    int i = 0;
-    while (i < n){
+      int i = 0;
+      while (i < n){
         ans = ans + i * (a[i] % (2 + i));
         i = i + 1;
-    }
+      }
 
-    if (ans < 0)
+      if (ans < 0)
         ans = -ans;
+      clock_gettime(CLOCK_MONOTONIC, &end);
+      elapsed_ns = (end.tv_sec - start.tv_sec) * 1000000000L + (end.tv_nsec - start.tv_nsec);
+      arr[j] = elapsed_ns/(2500);
+    }
+    compute_stats(arr, 10, &max, &avg, &std_dev);
+    printf("%d\n", ans);
+    printf("max = %ldus, avg = %lfus, stddev= %lfus\n", max, avg, std_dev);
 
-    putint(ans);
-    putch(10);
     return 0;
 }
