@@ -1,0 +1,13 @@
+03 sort (compute result correct):
+1) FPGA+Boom+Linux
+max = 100984094us, avg = 77332545.8us, stddev = 7883860.49us
+2) FPGA+Boom+Baremetal
+max =  93837995us, avg = 74504520.3us, stddev = 6445067.66us
+3) Cortex-A53 inside of the Xilinx
+max =   1752166us, avg =  1344583.5us, stddev =  135883.47us
+4) Star Five
+max =   1628671us, avg =  1262705.2us, stddev =  122022.09us
+5) Raspberry 4
+max =    778605us, avg =   777118.2us, stddev =    1423.23us
+
+
