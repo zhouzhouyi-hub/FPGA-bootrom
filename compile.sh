@@ -1,1 +1,1 @@
-riscv64-linux-gnu-gcc -T tmp.lds -o helloeducg.elf -static -nostartfiles  helloword.c kprintf.c -nostdlib shuffle2.o
+riscv64-linux-gnu-gcc -T tmp.lds -o boot.elf -static -nostartfiles -O2  helloworld.c kprintf.c -nostdlib  03_sort3.c
