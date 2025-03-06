@@ -26,7 +26,7 @@ int realmain(void) {
   double avg, std_dev;  
   int j;
   float answer;
-  kprintf("begin sort3\n");
+  kprintf("begin 2024_U03_25\n");
   for (j = 0; j < 10; j++) {
     startcycle = get_cycle_count();
     answer = U03_25();
