@@ -136,10 +136,11 @@ int main(){
       clock_gettime(CLOCK_MONOTONIC, &end);
       elapsed_ns = (end.tv_sec - start.tv_sec) * 1000000000L + (end.tv_nsec - start.tv_nsec);
       arr[j] = elapsed_ns/(2500);
+      printf("%ld\n", arr[j]);
     }
     compute_stats(arr, 10, &max, &avg, &std_dev);
     printf("%d\n", ans);
-    printf("max = %ldus, avg = %lfus, stddev= %lfus\n", max, avg, std_dev);
+    //printf("max = %ldus, avg = %lfus, stddev= %lfus\n", max, avg, std_dev);
 
     return 0;
 }

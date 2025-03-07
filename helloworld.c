@@ -25,15 +25,15 @@ int realmain(void) {
   unsigned long max;
   double avg, std_dev;  
   int j;
-  float answer;
-  kprintf("begin 2024_U03_25\n");
+  int answer;
+  kprintf("begin 03 sort\n");
   for (j = 0; j < 10; j++) {
     startcycle = get_cycle_count();
-    answer = U03_25();
+    answer = t03_sort3();
     arr[j] = (get_cycle_count() - startcycle)/50;
-    kprintf("%ld %lf\n", arr[j], answer);
+    kprintf("round%d: %ld %d\n", j, arr[j], answer);
   }
-
+  kprintf("end 03 sort\n");
   while (1)
     ;
   return 0;
