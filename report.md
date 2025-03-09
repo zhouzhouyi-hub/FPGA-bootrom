@@ -66,3 +66,8 @@
 X轴表示每组测试用例（每组9轮测试）的平均耗时
 
 Y轴表示每组测试用例（每组9轮测试）的误差(Margin of Error/平均耗时)
+
+
+## 原始测试数据
+
+https://github.com/zhouzhouyi-hub/FPGA-bootrom/blob/main/resultindetail
