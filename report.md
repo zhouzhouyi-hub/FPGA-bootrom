@@ -85,6 +85,20 @@ https://github.com/zhouzhouyi-hub/FPGA-bootrom/blob/main/resultindetail
 测试过程中，按照测试环境分为9组，每组10轮测试，计算每轮测试的平均耗时和误差
 每组的平均耗时取每轮平均耗时的平均值，每组的误差取10轮测试中的误差最大值
 
+## 测试源码
+
+测试用例源码在
+https://github.com/zhouzhouyi-hub/FPGA-bootrom/blob/main/03_sort3bare.c
+
+以及
+https://github.com/zhouzhouyi-hub/FPGA-bootrom/blob/main/03_sort3.c
+
+测试用例编译脚本在
+https://github.com/zhouzhouyi-hub/FPGA-bootrom/blob/main/compile.sh
+
+
+
+
 ## FPGA+Boom+Bare Metal
 裸机环境测试说明：
 在Xilinx FPGA开发板的RISC-V处理器上，直接运行测试程序，中间没有操作系统
