@@ -80,9 +80,9 @@ int main() {
 	  double mean1 = compute_mean(numbers + 1, SAMPLE_SIZE - 1);
 	  double stddev1 = compute_stddev(numbers + 1, SAMPLE_SIZE - 1, mean1);
 	  double margin_of_error1 = compute_margin_of_error(stddev1, SAMPLE_SIZE - 1);
-	  printf("%s %lf %lf\n", begin, margin_of_error/mean, margin_of_error1/mean1);
+	  printf("%s %lf %lf \n", begin, mean1, margin_of_error1/mean1);
 	} else
-	  printf("%s %lf\n", begin, margin_of_error/mean);
+	  printf("%s %lf %lf\n", begin, mean,  margin_of_error/mean);
     }
     
     return 0;
