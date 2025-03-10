@@ -102,6 +102,7 @@ https://github.com/zhouzhouyi-hub/FPGA-bootrom/blob/main/compile.sh
 ## FPGA+Boom+Bare Metal
 裸机环境测试说明：
 在Xilinx FPGA开发板的RISC-V处理器上，直接运行测试程序，中间没有操作系统
+(即：测试程序取代了传统的uboot的地位）
 
 ## 相关硬件图片
 
